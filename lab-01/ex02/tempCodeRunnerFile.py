@@ -13,3 +13,4 @@ if kiem_tra_so_nguyen_to(number):
     print(number, "là số nguyên tố.")
 else:
     print(number, "không phải là số nguyên tố.")
+    
