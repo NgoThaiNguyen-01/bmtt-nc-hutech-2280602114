@@ -1,4 +1,11 @@
+# -*- coding: utf-8 -*-
+
+# Form implementation generated from reading ui file './ui/vigenere.ui'
+# Created by: PyQt5 UI code generator 5.15.11
+
 from PyQt5 import QtCore, QtGui, QtWidgets
+import os
+os.environ["QT_QPA_PLATFORM_PLUGIN_PATH"] = "./platforms"
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -21,8 +28,9 @@ class Ui_MainWindow(object):
         self.lineEdit.setFont(font)
         self.lineEdit.setObjectName("lineEdit")
 
-        # ✅ Chỉ cho nhập chữ cái (A–Z/a–z)
-        validator = QtGui.QRegExpValidator(QtCore.QRegExp("[A-Za-z]+"))
+        # ✅ Chỉ cho nhập ký tự chữ cái (A–Z, a–z)
+        regex = QtCore.QRegExp("[A-Za-z]+")
+        validator = QtGui.QRegExpValidator(regex)
         self.lineEdit.setValidator(validator)
 
         self.label_4 = QtWidgets.QLabel(self.centralwidget)
@@ -54,7 +62,7 @@ class Ui_MainWindow(object):
         self.label.setObjectName("label")
 
         self.label_3 = QtWidgets.QLabel(self.centralwidget)
-        self.label_3.setGeometry(QtCore.QRect(260, 90, 271, 31))
+        self.label_3.setGeometry(QtCore.QRect(260, 90, 300, 31))
         font = QtGui.QFont()
         font.setPointSize(12)
         self.label_3.setFont(font)
@@ -86,6 +94,7 @@ class Ui_MainWindow(object):
         self.menubar.setGeometry(QtCore.QRect(0, 0, 800, 26))
         self.menubar.setObjectName("menubar")
         MainWindow.setMenuBar(self.menubar)
+
         self.statusbar = QtWidgets.QStatusBar(MainWindow)
         self.statusbar.setObjectName("statusbar")
         MainWindow.setStatusBar(self.statusbar)
@@ -101,9 +110,8 @@ class Ui_MainWindow(object):
         self.pushButton.setText(_translate("MainWindow", "Encrypt"))
         self.pushButton_2.setText(_translate("MainWindow", "Decrypt"))
         self.label.setText(_translate("MainWindow", "VIGENERE CIPHER"))
-        self.label_3.setText(_translate("MainWindow", "Ngo Thai Nguyen - 2280602114"))
+        self.label_3.setText(_translate("MainWindow", "Ngô Thái Nguyên - 2280602114"))
         self.label_2.setText(_translate("MainWindow", "Plain Text: "))
-
 
 if __name__ == "__main__":
     import sys

@@ -1,4 +1,7 @@
+# -*- coding: utf-8 -*-
 from PyQt5 import QtCore, QtGui, QtWidgets
+import os
+os.environ["QT_QPA_PLATFORM_PLUGIN_PATH"] = "./platforms"
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -8,7 +11,7 @@ class Ui_MainWindow(object):
         self.centralwidget.setObjectName("centralwidget")
 
         self.label_3 = QtWidgets.QLabel(self.centralwidget)
-        self.label_3.setGeometry(QtCore.QRect(250, 90, 271, 31))
+        self.label_3.setGeometry(QtCore.QRect(250, 90, 300, 31))
         font = QtGui.QFont()
         font.setPointSize(12)
         self.label_3.setFont(font)
@@ -49,8 +52,9 @@ class Ui_MainWindow(object):
         self.lineEdit.setFont(font)
         self.lineEdit.setObjectName("lineEdit")
 
-        # ✅ Chỉ cho nhập chữ cái A-Z/a-z
-        validator = QtGui.QRegExpValidator(QtCore.QRegExp("[A-Za-z]+"))
+        # ✅ Chỉ cho nhập chuỗi chữ cái (A–Z, a–z)
+        regex = QtCore.QRegExp("[A-Za-z]+")
+        validator = QtGui.QRegExpValidator(regex)
         self.lineEdit.setValidator(validator)
 
         self.textEdit_2 = QtWidgets.QTextEdit(self.centralwidget)
@@ -86,6 +90,7 @@ class Ui_MainWindow(object):
         self.menubar.setGeometry(QtCore.QRect(0, 0, 800, 26))
         self.menubar.setObjectName("menubar")
         MainWindow.setMenuBar(self.menubar)
+
         self.statusbar = QtWidgets.QStatusBar(MainWindow)
         self.statusbar.setObjectName("statusbar")
         MainWindow.setStatusBar(self.statusbar)
@@ -96,14 +101,13 @@ class Ui_MainWindow(object):
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
-        self.label_3.setText(_translate("MainWindow", "Ngo Thai Nguyen - 2280602114"))
+        self.label_3.setText(_translate("MainWindow", "Ngô Thái Nguyên - 2280602114"))
         self.label_2.setText(_translate("MainWindow", "Plain Text: "))
         self.label_4.setText(_translate("MainWindow", "Key:"))
         self.pushButton_2.setText(_translate("MainWindow", "Decrypt"))
         self.pushButton.setText(_translate("MainWindow", "Encrypt"))
         self.label.setText(_translate("MainWindow", "PLAYFAIR CIPHER"))
         self.label_5.setText(_translate("MainWindow", "Cipher Text: "))
-
 
 if __name__ == "__main__":
     import sys

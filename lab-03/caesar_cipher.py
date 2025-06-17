@@ -58,6 +58,7 @@ class MyApp(QMainWindow):
 if __name__ == "__main__":
     app = QApplication(sys.argv)
     window = MyApp()
-    window.setWindowTitle("Caesar Cipher - Giao diện API")
-    window.show()
+    window.setWindowTitle("Caesar Cipher - Gọi API")
+    window.show()  # ⚠️ Thiếu dòng này là không hiển thị cửa sổ!
     sys.exit(app.exec_())
+
