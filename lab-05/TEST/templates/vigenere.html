@@ -1,0 +1,14 @@
+<div id="vigenereForm" class="form-popup">
+    <span class="close-btn" onclick="closeForm('vigenereForm')">×</span>
+    <h3>Vigenère Cipher - PHAN ĐÌNH DUY THÔNG - 12345678</h3>
+    <form action="/encrypt/vigenere" method="post">
+        <input name="inputPlainText" placeholder="Văn bản cần mã hóa"><br>
+        <input name="inputKeyPlain" placeholder="Khóa"><br>
+        <button type="submit">Mã hóa</button>
+    </form><br>
+    <form action="/decrypt/vigenere" method="post">
+        <input name="inputCipherText" placeholder="Văn bản cần giải mã"><br>
+        <input name="inputKeyCipher" placeholder="Khóa"><br>
+        <button type="submit">Giải mã</button>
+    </form>
+</div>

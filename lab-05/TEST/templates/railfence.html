@@ -1,0 +1,14 @@
+<div id="railfenceForm" class="form-popup">
+    <span class="close-btn" onclick="closeForm('railfenceForm')">×</span>
+    <h3>Rail Fence Cipher - PHAN ĐÌNH DUY THÔNG - 12345678</h3>
+    <form action="/encrypt/railfence" method="post">
+        <input name="inputPlainText" placeholder="Văn bản cần mã hóa"><br>
+        <input name="inputKeyPlain" type="number" placeholder="Khóa"><br>
+        <button type="submit">Mã hóa</button>
+    </form><br>
+    <form action="/decrypt/railfence" method="post">
+        <input name="inputCipherText" placeholder="Văn bản cần giải mã"><br>
+        <input name="inputKeyCipher" type="number" placeholder="Khóa"><br>
+        <button type="submit">Giải mã</button>
+    </form>
+</div>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>THBMTTNC - Bài Kiểm Tra Kết Thúc Môn</title>
+    <style>
+        body { text-align: center; font-family: Arial; padding: 20px; }
+        .link-btn {
+            margin: 10px; padding: 10px 20px;
+            font-size: 18px; cursor: pointer;
+            background-color: #007bff; color: white; border: none; border-radius: 5px;
+        }
+        .link-btn:hover { background-color: #0056b3; }
+        .form-popup {
+            display: none; position: fixed;
+            top: 15%; left: 30%; width: 40%;
+            background: #f0f0f0; padding: 20px;
+            border: 2px solid #333; z-index: 100;
+            box-shadow: 0px 0px 12px rgba(0,0,0,0.2);
+        }
+        .close-btn {
+            float: right; cursor: pointer;
+            font-weight: bold; color: red;
+        }
+    </style>
+    <script>
+        function openForm(id) {
+            document.querySelectorAll('.form-popup').forEach(f => f.style.display = 'none');
+            document.getElementById(id).style.display = 'block';
+        }
+        function closeForm(id) {
+            document.getElementById(id).style.display = 'none';
+        }
+    </script>
+</head>
+<body>
+    <img src="{{ url_for('static', filename='logo_hutech.jpg') }}" height="80">
+    <img src="{{ url_for('static', filename='logo_hutech_30nam.jpg') }}" height="80">
+    <h2>BÀI KIỂM TRA KẾT THÚC MÔN HỌC : THBMTTNC</h2>
+    <h3>NGÔ THÁI NGUYÊN - 2280602114 - GLHF !</h3>
+
+    <button class="link-btn" onclick="openForm('caesarForm')">Caesar Cipher</button>
+    <button class="link-btn" onclick="openForm('playfairForm')">Playfair Cipher</button>
+    <button class="link-btn" onclick="openForm('railfenceForm')">Rail Fence Cipher</button>
+    <button class="link-btn" onclick="openForm('vigenereForm')">Vigenère Cipher</button>
+
+    {% include 'caesar.html' %}
+    {% include 'playfair.html' %}
+    {% include 'railfence.html' %}
+    {% include 'vigenere.html' %}
+</body>
+</html>

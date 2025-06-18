@@ -1,0 +1,20 @@
+<div id="caesarForm" class="form-popup">
+    <span class="close-btn" onclick="closeForm('caesarForm')">×</span>
+    <h3 style="margin-bottom: 10px;">Caesar Cipher - PHAN ĐÌNH DUY THÔNG - 12345678</h3>
+
+    <form action="/encrypt/caesar" method="post" style="margin-bottom: 15px;">
+        <label>Plain Text:</label><br>
+        <input name="inputPlainText" placeholder="Văn bản cần mã hóa" style="width: 100%;"><br><br>
+        <label>Key:</label><br>
+        <input name="inputKeyPlain" type="number" placeholder="Khóa" style="width: 100%;"><br><br>
+        <button type="submit">Mã hóa</button>
+    </form>
+
+    <form action="/decrypt/caesar" method="post">
+        <label>Cipher Text:</label><br>
+        <input name="inputCipherText" placeholder="Văn bản cần giải mã" style="width: 100%;"><br><br>
+        <label>Key:</label><br>
+        <input name="inputKeyCipher" type="number" placeholder="Khóa" style="width: 100%;"><br><br>
+        <button type="submit">Giải mã</button>
+    </form>
+</div>
